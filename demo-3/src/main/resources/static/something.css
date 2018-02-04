@@ -1,0 +1,33 @@
+<style>
+
+input[type=text], input[type=password] {
+    padding: 10px 15px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+form{
+     color : white;
+     background-color : #000080;
+}
+img {
+    opacity: 0.3;
+}
+h1
+{  
+   font-family: Trebuchet MS;
+}
+button {
+    color: Black;
+    padding: 10px 15px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+</style>
