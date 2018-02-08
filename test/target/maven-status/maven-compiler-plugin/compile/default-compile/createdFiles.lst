@@ -1,0 +1,14 @@
+com\test\model\User.class
+com\test\model\checkmodel.class
+test\controller.class
+com\test\model\Login.class
+test\config.class
+com\test\controller\RegistrationController.class
+com\test\dao\UserDaoImpl.class
+com\test\service\UserServiceImpl.class
+com\test\controller\Check.class
+com\test\service\UserService.class
+com\test\controller\LoginController.class
+com\test\dao\UserDao.class
+test\SpringWebIntializer.class
+com\test\dao\UserMapper.class
