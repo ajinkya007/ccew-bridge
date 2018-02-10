@@ -1,0 +1,85 @@
+<style>
+body {font-family: Trebuchet MS;}
+
+.tablink {
+    background-color: #000080;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 20px 20px;
+    font-size: 17px;
+    width: 50%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content */
+.tabcontent {
+    color: black;
+    display: none;
+    padding: 200px;
+    text-align: center;
+    display: none;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+input[type=text], input[type=password] {
+    padding: 7px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+form{
+     color : white;
+     background-color : #000080;
+}
+img {
+    opacity: 0.3;
+}
+h1
+{  
+   font-family: Trebuchet MS;
+}
+button {
+    color: Black;
+    padding: 10px 15px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+
+#stock {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#stock td, #stock th {
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+
+#stock tr:nth-child(even){background-color: #f2f2f2;}
+
+#stock tr:hover {background-color: #ddd;}
+
+#stock th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #000080;
+    color: white;
+}
+
+</style>

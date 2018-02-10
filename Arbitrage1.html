@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BSE/NSE Arbitrage Recommendation System</title>
+<link rel="stylesheet" type="text/css" href="Arbitrage1.css"/>
+<script src="Arbitrage1.js"></script>
+<script>
+function buttonclick()
+{
+    var x = document.getElementById("div1");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+</head>
+<body>
+
+<center><form>
+   <h1><I>BSE/NSE Arbitrage Recommendation System</I></h1>
+   <h3> <label><b>Username &#160</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" required>&#160;&#160;&#160;&#160
+
+    <label><b>Password &#160</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>&#160;&#160;&#160;&#160;&#160;&#160
+        
+    <button type="submit" onclick="buttonclick()"><b>Login</b></button>&#160;&#160;&#160;&#160
+    <label>
+      <input type="checkbox"> Remember me
+    </label></h3>
+</form></center><hr>
+<div id="div1" style="display:none">
+<button class="tablink" onclick="openCity('current', this)" id="defaultOpen">Current Stock</button>
+<button class="tablink" onclick="openCity('saved', this)">Saved Stock</button>
+
+<div id="current" class="tabcontent">
+<table id="stock">
+  <tr>
+    <th>Time</th>
+    <th>Stock Name</th>
+    <th>Bought</th>
+    <th>Sold</th>
+    <th>Quantity</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+  <!--img src="C:\Users\CO\Desktop\Citi project\Image\STM.png " width=1300 height=400 align="center"-->
+</div>
+
+<div id="saved" class="tabcontent">
+<table id="stock">
+  <tr>
+    <th>Time</th>
+    <th>Stock Name</th>
+    <th>Bought</th>
+    <th>Sold</th>
+    <th>Quantity</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+  <!--img src="C:\Users\CO\Desktop\Citi project\Image\STM.png " width=1300 height=400 align="center"-->
+</div>
+</div>
+</body>
+</html>
