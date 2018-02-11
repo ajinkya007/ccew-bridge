@@ -1,13 +1,13 @@
-C:\Users\A K GUPTA\Documents\workspace-sts-3.9.2.RELEASE\test\src\main\java\com\test\controller\RegistrationController.java
-C:\Users\A K GUPTA\Documents\workspace-sts-3.9.2.RELEASE\test\src\main\java\com\test\dao\UserDaoImpl.java
-C:\Users\A K GUPTA\Documents\workspace-sts-3.9.2.RELEASE\test\src\main\java\com\test\model\User.java
-C:\Users\A K GUPTA\Documents\workspace-sts-3.9.2.RELEASE\test\src\main\java\test\SpringWebIntializer.java
-C:\Users\A K GUPTA\Documents\workspace-sts-3.9.2.RELEASE\test\src\main\java\com\test\dao\UserDao.java
-C:\Users\A K GUPTA\Documents\workspace-sts-3.9.2.RELEASE\test\src\main\java\com\test\model\Login.java
-C:\Users\A K GUPTA\Documents\workspace-sts-3.9.2.RELEASE\test\src\main\java\com\test\service\UserService.java
-C:\Users\A K GUPTA\Documents\workspace-sts-3.9.2.RELEASE\test\src\main\java\test\controller.java
-C:\Users\A K GUPTA\Documents\workspace-sts-3.9.2.RELEASE\test\src\main\java\com\test\controller\LoginController.java
-C:\Users\A K GUPTA\Documents\workspace-sts-3.9.2.RELEASE\test\src\main\java\com\test\model\checkmodel.java
-C:\Users\A K GUPTA\Documents\workspace-sts-3.9.2.RELEASE\test\src\main\java\test\config.java
-C:\Users\A K GUPTA\Documents\workspace-sts-3.9.2.RELEASE\test\src\main\java\com\test\controller\Check.java
-C:\Users\A K GUPTA\Documents\workspace-sts-3.9.2.RELEASE\test\src\main\java\com\test\service\UserServiceImpl.java
+/home/ajinkyawavare/Development/ccew-bridge/test/src/main/java/com/test/model/Login.java
+/home/ajinkyawavare/Development/ccew-bridge/test/src/main/java/com/test/controller/LoginController.java
+/home/ajinkyawavare/Development/ccew-bridge/test/src/main/java/com/test/service/UserService.java
+/home/ajinkyawavare/Development/ccew-bridge/test/src/main/java/com/test/service/UserServiceImpl.java
+/home/ajinkyawavare/Development/ccew-bridge/test/src/main/java/com/test/dao/UserDao.java
+/home/ajinkyawavare/Development/ccew-bridge/test/src/main/java/test/SpringWebIntializer.java
+/home/ajinkyawavare/Development/ccew-bridge/test/src/main/java/com/test/model/checkmodel.java
+/home/ajinkyawavare/Development/ccew-bridge/test/src/main/java/com/test/dao/UserDaoImpl.java
+/home/ajinkyawavare/Development/ccew-bridge/test/src/main/java/com/test/controller/RegistrationController.java
+/home/ajinkyawavare/Development/ccew-bridge/test/src/main/java/test/config.java
+/home/ajinkyawavare/Development/ccew-bridge/test/src/main/java/test/controller.java
+/home/ajinkyawavare/Development/ccew-bridge/test/src/main/java/com/test/controller/Check.java
+/home/ajinkyawavare/Development/ccew-bridge/test/src/main/java/com/test/model/User.java
