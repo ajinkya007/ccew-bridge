@@ -1,0 +1,61 @@
+<!-- In this code I am defining two controller one is for get text in textbox and display it and another one is for table. But only first controller is gets call. And when I am removing ng-app part in first div tag then second controller gets executed.-->
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<body >
+
+<div ng-app="myApp" ng-controller = "myCtrl">
+ <h1 align="center"> <I>BSE/NSE Arbitrage Recommendation System</I></h1>
+<h3 align="center">
+  Username : 
+  <input type="text" placeholder="Enter Username" ng-model="name" required>&#160;&#160;&#160;&#160;&#160;&#160;
+  Password :
+  <input type="password" placeholder="Enter password" required>&#160;&#160;&#160;&#160;&#160;&#160;
+  <input type="submit">
+  </h3>
+ <b align="center"> <p>hello <span ng-bind="name"></span></p></b>
+ <div ng-app="mainapp" ng-controller = "stockController">
+                  <table border=2 align="center">
+                     <tr>
+                        <th>Time</th>.
+                        <th>Stockname</th>
+	       <th>Bought</th>
+	       <th>Sold</th>
+     	       <th>Quantity</th>
+                     </tr>
+                     
+                     <tr ng-repeat = "data1 in stock.data">
+                        <td>{{ data1.time }}</td>
+                        <td>{{ data1.stockname }}</td>
+	      <td>{{ data1.bought }}</td>
+   	      <td>{{ data1.sold }}</td>
+	      <td>{{ data1.quantity }}</td>
+                     </tr>
+         </table> 
+      </div>
+      
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.name = "";
+});
+</script>
+
+ <script>
+         var app = angular.module("mainapp", []);
+         
+         app.controller('stockController', function($scope) {
+	 $scope.stock = { 
+               data:[
+                  {time:'4:00',stockname:'',bought:'',sold:'',quantity:''},
+                  {time:'4:05',stockname:'',bought:'',sold:'',quantity:''},
+                  {time:'4:10',stockname:'',bought:'',sold:'',quantity:''},
+                  {time:'4:11',stockname:'',bought:'',sold:'',quantity:''},
+                  {time:'4:15',stockname:'',bought:'',sold:'',quantity:''}
+               ]
+            };
+         });
+</script>
+</body>
+</html>
