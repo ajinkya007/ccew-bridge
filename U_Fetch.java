@@ -10,7 +10,7 @@ public class U_Fetch
 {
 	public static void main(String args[]) throws IOException
 	{
-		URL url=new URL("https://www.moneyworks4me.com/best-index/nse-stocks/top-nifty50-companies-list/");
+		URL url=new URL("https://www.moneyworks4me.com/best-index/nse-stocks/top-nifty50-companies-list/");//not working
 		URLConnection urc=url.openConnection();
 		urc.setRequestProperty("User-Agent", "Mozilla/5.0");
 		InputStreamReader ireader=new InputStreamReader(urc.getInputStream());
