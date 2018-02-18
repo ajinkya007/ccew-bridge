@@ -1,0 +1,102 @@
+<html>
+<head>
+<style>
+input[type=text], input[type=password] {
+    padding: 7px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js">
+</script>
+<link rel="stylesheet" type="text/css" href="try.css"/>
+</head>
+<body ng-app="testApp">
+<div ng-controller="userController" id="div1">
+<form name="form">
+<h1 align="center"> <I>BSE/NSE Arbitrage Recommendation System</I></h1>
+<h3 align="center">
+  Username : 
+  <input type="text" placeholder="Enter Username" ng-model="name" id="uname" Required>&#160;&#160;&#160;&#160;&#160;&#160;
+  Password :
+  <input type="password" placeholder="Enter password" ng-model="password" id="pass" Required>&#160;&#160;&#160;&#160;&#160;&#160;
+ <input type="button" value="Login" ng-disabled="form.$invalid || dataLoading" ng-click="ShowAlert()" />
+  </h3>
+</form>
+</div>
+<div ng-init="myVar = 'STM.png'">
+    <img ng-src="{{myVar}}" width=1300 height=400>
+</div>
+
+<div id="div2" style="display:none">
+<div ng-controller="stockController">
+ <table border=2 align="center" id="stock">
+      <tr>
+          <th>Time</th>
+          <th>Stockname</th>
+	     <th>Bought</th>
+	     <th>Sold</th>
+     	     <th>Quantity</th>
+      </tr>
+                     
+      <tr ng-repeat = "data1 in stock.data">
+          <td>{{ data1.time }}</td>
+          <td>{{ data1.stockname }}</td>
+	     <td>{{ data1.bought }}</td>
+   	     <td>{{ data1.sold }}</td>
+	     <td>{{ data1.quantity }}</td>
+      </tr>
+   </table> 
+</div>
+</div>
+    <script>
+        var ngApp = angular.module('testApp', []);
+ ngApp.controller('userController', function ($scope, $window) 
+{
+            $scope.ShowAlert = function () {
+	var name = $window.document.getElementById('uname');
+	var pass = $window.document.getElementById('pass');
+                if ((typeof ($scope.name) == "undefined" || $scope.name == "") && (typeof ($scope.password) == "undefined" || $scope.password== "")) {
+                    $window.alert("Please enter your username and password!");
+                    return;
+                }
+	else
+	{
+		if($scope.name=="Priyanka")
+		{
+			if($scope.password=="Priya")
+			{
+               				$window.alert("Login Successfully ");
+			}
+			else
+			{	
+				$window.alert("Check password");
+				pass.focus();
+			}
+		}
+		else
+		{
+			$window.alert("Check username");
+			name.focus();
+		}
+	}
+		
+            }
+        });
+       ngApp.controller('stockController', function ($scope) {
+         	 $scope.stock = { 
+               data:[
+                  {time:'4:00',stockname:'',bought:'',sold:'',quantity:''},
+                  {time:'4:05',stockname:'',bought:'',sold:'',quantity:''},
+                  {time:'4:10',stockname:'',bought:'',sold:'',quantity:''},
+                  {time:'4:11',stockname:'',bought:'',sold:'',quantity:''},
+                  {time:'4:15',stockname:'',bought:'',sold:'',quantity:''}
+               ]
+            };
+
+        });
+    </script>
+</body>
+</html>

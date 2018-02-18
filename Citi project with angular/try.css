@@ -1,0 +1,52 @@
+<style>
+input[type=text], input[type=password] {
+    padding: 7px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+#div1 {
+     color : white;
+     background-color : #000080;
+}
+h1
+{  
+   font-family: Trebuchet MS;
+}
+input[type=button]{
+    padding: 7px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+
+#stock {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#stock td, #stock th {
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+
+#stock tr:nth-child(even){background-color: #f2f2f2;}
+
+#stock tr:hover {background-color: #ddd;}
+
+#stock th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #000080;
+    color: white;
+}
+img {
+    opacity: 0.4;
+}
+</style>

@@ -1,0 +1,83 @@
+<html>
+<head>
+<style>
+input[type=text], input[type=password] {
+    padding: 7px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.tablink {
+    background-color: #000080;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 20px 20px;
+    font-size: 17px;
+    width: 50%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js">
+</script>
+</head>
+<body ng-app="testApp">
+<div ng-controller="userController" id="div1">
+ <button value="Login" class="tablink" ng-click="ShowAlert()" >Current Stock</button>
+<button value="Login" class="tablink" ng-click="ShowAlert()" >Saved Stock</button>
+<div ng-controller="stockController">
+<div style="display:none">
+ <table border=2 align="center" id="stock">
+      <tr>
+          <th>Time</th>
+          <th>Stockname</th>
+	     <th>Bought</th>
+	     <th>Sold</th>
+     	     <th>Quantity</th>
+      </tr>
+                     
+      <tr ng-repeat = "data1 in stock.data">
+          <td>{{ data1.time }}</td>
+          <td>{{ data1.stockname }}</td>
+	     <td>{{ data1.bought }}</td>
+   	     <td>{{ data1.sold }}</td>
+	     <td>{{ data1.quantity }}</td>
+      </tr>
+   </table> 
+</div>
+</div>
+</div>
+    <script>
+        var ngApp = angular.module('testApp', []);
+ ngApp.controller('userController', function ($scope, $window) 
+{
+            $scope.ShowAlert = function () 
+	{
+               	$window.alert("Login Successfully ");
+	ngApp.controller('stockController', function ($scope) {
+         	 $scope.stock = { 
+               data:[
+                  {time:'4:00',stockname:'',bought:'',sold:'',quantity:''},
+                  {time:'4:05',stockname:'',bought:'',sold:'',quantity:''},
+                  {time:'4:10',stockname:'',bought:'',sold:'',quantity:''},
+                  {time:'4:11',stockname:'',bought:'',sold:'',quantity:''},
+                  {time:'4:15',stockname:'',bought:'',sold:'',quantity:''}
+               ]
+            };
+
+        });
+
+	  }
+});
+
+ 
+    </script>
+</body>
+</html>
+
