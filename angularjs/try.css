@@ -1,0 +1,68 @@
+<style>
+input[type=text], input[type=password] {
+    padding: 7px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+#div1 {
+     color : white;
+     background-color : #000080;
+}
+h1
+{  
+   font-family: Trebuchet MS;
+}
+input[type=button]{
+    padding: 7px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+
+#stockTable {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+#stockTable td, #stockTable th {
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+
+#stockTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#stockTable tr:hover {background-color: #ddd;}
+
+#stockTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #000080;
+    color: white;
+}
+img {
+    opacity: 0.4;
+}
+.tablink {
+    background-color: #000080;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 20px 20px;
+    font-size: 17px;
+    width: 50%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+</style>
