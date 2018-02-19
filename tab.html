@@ -1,0 +1,131 @@
+
+<html>
+<head>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js">
+ </script>
+<style>
+.tablink {
+    background-color: #000080;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 20px 20px;
+    font-size: 17px;
+    width: 50%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+
+#stockTable {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+}
+
+#stockTable td, #stockTable th {
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+
+#stockTable tr:nth-child(even){background-color: #f2f2f2;}
+
+#stockTable tr:hover {background-color: #ddd;}
+
+#stockTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #000080;
+    color: white;
+}
+</style>
+</head>
+<body ng-app="testApp" ng-style="{'background-image':url({{STM.png}})'}">
+  <button class="tablink" ng-click="showme=true">Current Stock</a>
+  <button class="tablink" ng-click="showme1=true">Saved Stock</button> <br><br>
+<div>
+    <h2 ng-show="showme"> 
+ <div ng-controller="currentstockController" id="div2">
+<table border=2 align="center" id="stockTable">
+                <tr>
+                    <th>Time</th>
+                    <th>Stockname</th>
+                    <th>Bought</th>
+                    <th>Sold</th>
+                    <th>Quantity</th>
+                </tr>
+
+                <tr ng-repeat="data1 in stock.data">
+                    <td>{{ data1.time }}</td>
+                    <td>{{ data1.stockname }}</td>
+                    <td>{{ data1.bought }}</td>
+                    <td>{{ data1.sold }}</td>
+                    <td>{{ data1.quantity }}</td>
+                </tr>
+            </table>
+</div>
+</h2> 
+</div> 
+
+<div>
+<h2 ng-show="showme1"> 
+ <div ng-controller="savedstockController" id="div3">
+<table border=2 align="center" id="stockTable">
+                <tr>
+                    <th>Time</th>
+                    <th>Stockname</th>
+                    <th>Bought</th>
+                    <th>Sold</th>
+                    <th>Quantity</th>
+	<th>ID</th>
+                </tr>
+
+                <tr ng-repeat="data1 in stock.data">
+                    <td>{{ data1.time }}</td>
+                    <td>{{ data1.stockname }}</td>
+                    <td>{{ data1.bought }}</td>
+                    <td>{{ data1.sold }}</td>
+                    <td>{{ data1.quantity }}</td>
+	<td>{{ data1.id }}</td>
+                </tr>
+            </table>
+</div>
+</h2>  
+</div>
+
+
+ <script>
+         var ngApp = angular.module('testApp', []);
+          
+        ngApp.controller('currentstockController', function ($scope, $window) {
+                    $scope.stock = {
+                        data: [
+                            { time: '4:00', stockname: '', bought: '', sold: '', quantity: '' },
+                            { time: '4:05', stockname: '', bought: '', sold: '', quantity: '' },
+                            { time: '4:10', stockname: '', bought: '', sold: '', quantity: '' },
+                            { time: '4:11', stockname: '', bought: '', sold: '', quantity: '' },
+                            { time: '4:15', stockname: '', bought: '', sold: '', quantity: '' }
+                        ]
+                    };
+                });
+
+	
+	ngApp.controller('savedstockController', function ($scope, $window) {
+                    $scope.stock = {
+                        data: [
+                            { time: '4:00', stockname: '', bought: '', sold: '', quantity: '' ,id:''},
+                            { time: '4:05', stockname: '', bought: '', sold: '', quantity: '',id:'' },
+                            { time: '4:10', stockname: '', bought: '', sold: '', quantity: '' ,id:''},
+                            { time: '4:11', stockname: '', bought: '', sold: '', quantity: '' ,id:''},
+                            { time: '4:15', stockname: '', bought: '', sold: '', quantity: '' ,id:''}
+                        ]
+                    };
+                });
+</script> 
+</body>
+</html>
