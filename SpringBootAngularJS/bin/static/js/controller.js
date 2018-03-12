@@ -8,8 +8,6 @@ app.controller('userController', function($scope, $http, $location,$window) {
                     'Accept': 'text/plain'
                 }
         }
-		
-		$scope.postResultMessage ="Hi, Bro!";
 		var data = {
             firstname: $scope.firstname,
             lastname: $scope.lastname
@@ -22,8 +20,7 @@ app.controller('userController', function($scope, $http, $location,$window) {
 				document.write("<button>Savedstock</button>");
 			}*/
 			//$window.alert(response.data);
-			$scope.postResultMessage = true;
-			
+			$scope.postResultMessage = response.data;
 			}, function error(response) {
 			//$window.alert("Check username and password");
 			$scope.postResultMessage = "Error with status: " +  response.statusText;
