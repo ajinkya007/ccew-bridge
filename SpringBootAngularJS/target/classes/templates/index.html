@@ -24,24 +24,46 @@ input[type=text], input[type=password] {
 
 <body ng-app="testApp">
 <p align="right">
-<!-- <a href="https://www.facebook.com" target=_blank class="fa fa-facebook"></a>
+ <a href="https://www.facebook.com" target=_blank class="fa fa-facebook"></a>
 <a href="https://twitter.com" target=_blank class="fa fa-twitter"></a>
-<a href="https://www.instagram.com" target=_blank class="fa fa-instagram"></a> -->
+<a href="https://www.instagram.com" target=_blank class="fa fa-instagram"></a> 
 </p>     
 <div ng-controller="userController" id="div1">
 <form class="form-horizontal" name="form" ng-submit="submitForm()">
 <h1 align="center"> <I>BSE/NSE Arbitrage Recommendation System</I></h1>
 <h3 align="center">
   Username : 
-  <input type="text" placeholder="Enter Username" name="firstname" id="firstname" ng-model="firstname"></input>&#160;&#160;&#160;&#160;&#160;&#160;
+  <input type="text" placeholder="Enter Username" name="firstname" id="firstname" ng-model="firstname" Required></input>&#160;&#160;&#160;&#160;&#160;&#160;
   Password :
-  <input type="password" placeholder="Enter password" name="lastname" id="lastname" ng-model="lastname"></input>&#160;&#160;&#160;&#160;&#160;&#160;
+  <input type="password" placeholder="Enter password" name="lastname" id="lastname" ng-model="lastname" Required></input>&#160;&#160;&#160;&#160;&#160;&#160;
  <!--  <input type="button" value="Login" ng-disabled="form.$invalid || dataLoading" ng-click="ShowAlert()" ></input>-->
- <button type="submit" class="btn btn-default">Login</button> </h3>
-</form>
- <div >
+ <button type="submit" class="btn btn-default" ng-disabled="form.$invalid || dataLoading">Login</button> 
+ <!-- <div >
 			<p>{{postResultMessage}}</p>
-		</div>
+		
+		</div> -->
+		<div ng-switch={{postResultMessage}}>
+  <div ng-switch-when="Successful!">
+  <div id="tabs">
+ <button class="tablink" ng-click="showme=true;showme1=false">Current Stock</button>
+  <button class="tablink" ng-click="showme1=true;showme=false">Saved Stock</button>
+<br>
+<br></div>
+  <div ng-switch-default></div>
+</div>
+		
+		</h3>
+</form>
+<br><br>
+<!-- <div id="tabs" style="display : none">
+ <button class="tablink" ng-click="showme=true;showme1=false">Current Stock</button>
+  <button class="tablink" ng-click="showme1=true;showme=false">Saved Stock</button
+<br>
+<br>
+</div> -->
+<br>
+<br>
+
 </div>
 </body>
 </html>

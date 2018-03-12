@@ -1,0 +1,5 @@
+com\javasampleapproach\angularjs\controller\RestWebController.class
+com\javasampleapproach\angularjs\service\LoginService.class
+com\javasampleapproach\angularjs\SpringBootAngularJsApplication.class
+com\javasampleapproach\angularjs\controller\WebController.class
+com\javasampleapproach\angularjs\model\Customer.class

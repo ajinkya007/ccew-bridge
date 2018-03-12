@@ -1,5 +1,5 @@
 var app = angular.module('testApp', []);
-app.controller('userController', function($scope, $http, $location) {
+app.controller('userController', function($scope, $http, $location,$window) {
 	$scope.submitForm = function(){
 		var url = $location.absUrl() + "postcustomer";
 		
@@ -14,13 +14,21 @@ app.controller('userController', function($scope, $http, $location) {
         };
 		
 		$http.post(url, data, config).then(function (response) {
+			/*if(response.data=="Successful!")//can this be a condition??
+			{
+				document.write("<button>currentstock</button>");
+				document.write("<button>Savedstock</button>");
+			}*/
+			//$window.alert(response.data);
 			$scope.postResultMessage = response.data;
-		}, function error(response) {
+			}, function error(response) {
+			//$window.alert("Check username and password");
 			$scope.postResultMessage = "Error with status: " +  response.statusText;
 		});
 		
 		$scope.firstname = "";
 		$scope.lastname = "";
+		
 	}
 });
 

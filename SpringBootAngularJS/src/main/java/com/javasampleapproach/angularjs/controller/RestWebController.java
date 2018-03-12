@@ -34,6 +34,10 @@ public class RestWebController {
 		 }
 			 
 		 else
-			 return "Failed";
+		 {
+			 System.out.println("Fail");
+			 return "failed"; 
+		 }
+			
 	}
 }
