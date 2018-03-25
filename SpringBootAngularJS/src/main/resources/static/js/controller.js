@@ -1,135 +1,156 @@
 var app = angular.module('testApp', []);
-app.controller('userController', function($scope, $http, $location,$window) {
-	$scope.submitForm = function(){
-		var url = $location.absUrl() + "postcustomer";
-		
+app.controller('userController', function($scope, $http, $location, $window) {
+	$scope.submitForm = function() {
+		var url = $location.absUrl() + "post";
+
 		var config = {
-                headers : {
-                    'Accept': 'text/plain'
-                }
-        }
+			headers : {
+				'Accept' : 'text/plain'
+			}
+		}
 		var data = {
-            firstname: $scope.firstname,
-            lastname: $scope.lastname
-        };
+			username : $scope.username,
+			password : $scope.password
+		};
+
+		$http.post(url, data, config).then(
+				function(response) {
+					if (response.data == "Successful!") {
+						$scope.postResultMessage = true;
+						console.log($scope.username);
+						myFunction();
+						document.getElementById("name").innerHTML="Hi, "+data.username;
+					} else {
+						$window.alert("Check username and password");
+						$scope.postResultMessage = false;
+					}
+				},
+				function error(response) {
+					$scope.postResultMessage = "Error with status: "
+							+ response.statusText;
+				});
+	}
+	$scope.logout=function()
+	{
+		console.log("logout");
 		
-		$http.post(url, data, config).then(function (response) {
-			if(response.data=="Successful!")
-			{
-				//$("form").hide();
-				$scope.postResultMessage = true;
-				console.log($scope.firstname);
-				myFunction();
-				var s=document.getElementById("name");
-				s.value="Hi"; 
-			}
-			else
-			{
-				$window.alert("Check username and password");
-				$scope.postResultMessage = false;
-			}
-			//$window.alert(response.data);
-			}, function error(response) {
-			//$window.alert("Check username and password");
-			$scope.postResultMessage = "Error with status: " +  response.statusText;
-		});
-		
-		//$scope.firstname = "";
-		//$scope.lastname = "";
-		
+		document.getElementById("form").style="display:block";
+		document.getElementById("img").style="display:block";
+		document.getElementById("logname").style="display:none";
+		$scope.postResultMessage = true;
+		$scope.username="";
+		$scope.password="";
+		$scope.showme=false;
+		$scope.showme1=false;
 	}
 });
 
-
 function myFunction() {
-	
+
 	console.log("myFunction");
-	
-	document.getElementById("form").style="display:none";
-	document.getElementById("img").style="display:none";
-	
-	
+
+	document.getElementById("form").style = "display:none";
+	document.getElementById("img").style = "display:none";
+	document.getElementById("logname").style="display:block";
+
 }
 app.controller('getcontroller', function($scope, $http, $location) {
-	var s,r;
-	$scope.getfunction = function(){
-		console.log("getallcustomer")
-		var url = $location.absUrl() + "getallcustomer";
-		
-		$http.get(url).then(function (response) {
-			 s=response.data;
-			 $scope.response =s;
-		}, function error(response) {
-			$scope.postResultMessage = "Error with status: " +  response.statusText;
-		});
-		
+	var s, r;
+	$scope.getfunction = function() {
+		console.log("getalllg")
+		var url = $location.absUrl() + "getalllg";
+
+		$http.get(url).then(
+				function(response) {
+					s = response.data;
+					$scope.response = s;
+				},
+				function error(response) {
+					$scope.postResultMessage = "Error with status: "
+							+ response.statusText;
+				});
+
 	}
-	/*$scope.selected = [];
-	$scope.exist = function(item){
-	return $scope.selected.indexOf(item) > -1;
-	}*/
-	$scope.getSaved = function(){
+	$scope.getSaved = function() {
 		console.log("getcustomer")
 		var url = $location.absUrl() + "getSaved";
 		var r;
 		var config = {
-                headers : {
-                    'Accept': '*/*'
-                }
-        }
-		var data =$scope.firstname;
-		
-		$http.post(url, data, config).then(function (response) {
-			console.log("hello");
-			r=response.data;
-			$scope.response1 =r;
-		}, function error(response) {
-			$scope.postResultMessage = "Error with status: " +  response.statusText;
-		});
-		
+			headers : {
+				'Accept' : '*/*'
+			}
+		}
+		var data = $scope.username;
+
+		$http.post(url, data, config).then(
+				function(response) {
+					console.log("hello");
+					r = response.data;
+					$scope.response1 = r;
+				},
+				function error(response) {
+					$scope.postResultMessage = "Error with status: "
+							+ response.statusText;
+				});
+
 	}
-	$scope.toggleSelection = function(item){
-		var my_date=new Date();
-		var month=parseInt(my_date.getMonth())+1;
-		var String=my_date.getDate()+"-"+month+"-"+my_date.getFullYear();
-		var str=my_date.getHours()+":"+my_date.getMinutes();
+	$scope.toggleSelection = function(item) {
+		var my_date = new Date();
+		var mo = parseInt(my_date.getMonth()) + 1;
+		var month=mo.toString();
+		if (month.length == 1) {
+			month = '0' + month;
+		}
+		var h=my_date.getHours();
+		var hrs=h.toString();
+		if(hrs.length==1)
+		{
+			hrs='0'+hrs;
+		}
+		var m=my_date.getMinutes();
+		var mins=m.toString();
+		if(mins.length==1)
+		{
+			mins='0'+mins;
+		}
+		var String = my_date.getDate() + "-" + month + "-"+ my_date.getFullYear();
+		var str = hrs + ":" + mins;
 		console.log(month);
-		console.log($scope.firstname);
+		console.log($scope.username);
 		console.log(item.stockName);
 		console.log(String);
+		console.log(str);
 		console.log(item.nsePrice);
 		console.log(item.bsePrice);
 		console.log(item.profit);
-var url = $location.absUrl() + "saveData";
-		
+		var url = $location.absUrl() + "saveData";
+
 		var config = {
-                headers : {
-                    'Accept': 'text/plain'
-                }
-        }
+			headers : {
+				'Accept' : 'text/plain'
+			}
+		}
 		var data = {
-            stockName: item.stockName,
-            date: String,
-            time: str,
-            userId: $scope.firstname,
-            nsePrice: item.nsePrice,
-            bsePrice: item.bsePrice,
-            profit: item.profit
-        };
-		
-		$http.post(url, data, config).then(function (response) {
-			if(response.data=="successful")
-			{
-				console.log("inserted");
-			}
-			else
-			{
-				console.log("failed")
-			}
-			//$window.alert(response.data);
-			}, function error(response) {
-			//$window.alert("Check username and password");
-			$scope.postResultMessage = "Error with status: " +  response.statusText;
-		});
+			stockName : item.stockName,
+			date : String,
+			time : str,
+			userId : $scope.username,
+			nsePrice : item.nsePrice,
+			bsePrice : item.bsePrice,
+			profit : item.profit
+		};
+
+		$http.post(url, data, config).then(
+				function(response) {
+					if (response.data == "successful") {
+						console.log("inserted");
+					} else {
+						console.log("failed")
+					}
+				},
+				function error(response) {
+					$scope.postResultMessage = "Error with status: "
+							+ response.statusText;
+				});
 	}
 });
